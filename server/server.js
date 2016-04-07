@@ -5,7 +5,7 @@ var request = require('request');
 var app = module.exports = loopback();
 
 //custom vars
-var time_interval_in_miliseconds = 1500;
+var time_interval_in_miliseconds = 500;
 var apiUri = "http://finance.google.com/finance/info?client=ig&q=";
 var marketOpen ={"NSE": true,"BSE": true};
 
