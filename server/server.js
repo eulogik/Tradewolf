@@ -49,11 +49,15 @@ app.start = function() {
                             console.log(Math.abs(new Date().getTime() - new Date(q.lt_dts).getTime())/3600000);
 
                             app.models.Quotes.create(q, function(err, q){
-                              if(err)
+                              if(err){
                               console.log(err);
+                              }
+                              else {
+                                //success
+                                console.log("got "+symbols[i].market+":"+symbols[i].name);
+                              }
 
-                              //success
-                              console.log("got "+symbols[i].market+":"+symbols[i].name);
+
                             });
                         }
                     });
