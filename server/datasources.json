@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory",
+    "file": "bigdata.json"
+  },
+  "db-prod": {
+    "name": "db",
+    "connector": "mongodb"
+  }
+}

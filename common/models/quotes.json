@@ -1,0 +1,22 @@
+{
+  "name": "Quotes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "t": {
+      "type": "string",
+      "index": true
+    },
+    "ltt": {
+      "type": "string",
+      "index": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Symbols",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "market": {
+      "type": "string",
+      "required": true,
+      "comments": "e.g. NSE"
+    },
+    "name": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "index": true,
+      "comments": "e.g. INFY"
+    },
+    "active": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
