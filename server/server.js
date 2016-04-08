@@ -5,7 +5,8 @@ var request = require('request');
 var app = module.exports = loopback();
 
 //custom vars
-var time_interval_in_miliseconds = 500;
+var on = false;
+var time_interval_in_miliseconds = 1000;
 var apiUri = "http://finance.google.com/finance/info?client=ig&q=";
 
 
@@ -31,6 +32,10 @@ app.start = function() {
         setInterval(function(){
             if(!task_is_running){
                 task_is_running = true;
+
+                //swich on / off
+                if(on){
+
                 for(i in symbols){
                   //console.log(symbols[i].market+":"+symbols[i].name);
 
@@ -64,6 +69,7 @@ app.start = function() {
                     });
 
 
+                }
                 }
                 task_is_running = false;
             }
