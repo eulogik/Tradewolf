@@ -6,14 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "t": {
-      "type": "string",
-      "index": true
-    },
-    "ltt": {
-      "type": "string",
-      "index": true
-    }
   },
   "validations": [],
   "relations": {},
