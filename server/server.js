@@ -53,7 +53,7 @@ app.start = function() {
                               }
                               else {
                                 //success
-                                console.log("got "+symbols[i].market+":"+symbols[i].name);
+                                console.log(q.ltt+"::"+":"+q.t+"@"+q.l_cur);
                               }
 
 
