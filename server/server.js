@@ -7,7 +7,6 @@ var app = module.exports = loopback();
 //custom vars
 var time_interval_in_miliseconds = 500;
 var apiUri = "http://finance.google.com/finance/info?client=ig&q=";
-var marketOpen ={"NSE": true,"BSE": true};
 
 
 app.start = function() {
@@ -15,7 +14,7 @@ app.start = function() {
   return app.listen(function() {
     app.emit('started');
     var baseUrl = app.get('url').replace(/\/$/, '');
-    console.log('Web server listening at: %s', baseUrl);
+    console.log('Magic happens at: %s', baseUrl);
     if (app.get('loopback-component-explorer')) {
       var explorerPath = app.get('loopback-component-explorer').mountPath;
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
@@ -35,8 +34,7 @@ app.start = function() {
                 for(i in symbols){
                   //console.log(symbols[i].market+":"+symbols[i].name);
 
-                  if(marketOpen[symbols[i].market])
-                  {
+
                   //request data from apiUri
                     request(apiUri+symbols[i].market+":"+symbols[i].name, function (error, response, body) {
                         if (!error && response.statusCode == 200) {
@@ -46,8 +44,9 @@ app.start = function() {
                             q.qid = q.id;
                             delete q.id;
                             //console.log(q);
-                            console.log(Math.abs(new Date().getTime() - new Date(q.lt_dts).getTime())/3600000);
-
+                            //console.log(Math.abs(new Date().getTime() - new Date(q.lt_dts).getTime())/3600000, q.t);
+                            if(Math.abs(new Date().getTime() - new Date(q.lt_dts).getTime())/3600000 < 10){
+                            // temporary fix for avoiding dead data after market is closed
                             app.models.Quotes.create(q, function(err, q){
                               if(err){
                               console.log(err);
@@ -59,9 +58,11 @@ app.start = function() {
 
 
                             });
+
+                            }
                         }
                     });
-                  }
+
 
                 }
                 task_is_running = false;
