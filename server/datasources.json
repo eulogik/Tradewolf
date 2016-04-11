@@ -1,7 +1,11 @@
 {
-  "db": {
+  "db-loc": {
     "name": "db",
     "connector": "memory",
     "file": "bigdata.json"
+  },
+  "db": {
+    "name": "tradeWolf-db",
+    "connector": "mongodb"
   }
 }
