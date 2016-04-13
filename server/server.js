@@ -37,7 +37,7 @@ app.start = function() {
                 if(on && (new Date().getHours()>=0 && new Date().getHours()<=6)){
                 console.log("it's on");
                 for(i in symbols){
-                  //console.log(symbols[i].market+":"+symbols[i].name);
+                  console.log(symbols[i].market+":"+symbols[i].name);
 
 
                   //request data from apiUri
