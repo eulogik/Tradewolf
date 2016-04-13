@@ -66,6 +66,9 @@ app.start = function() {
 
                             }
                         }
+                        else {
+                          console.log(error);
+                        }
                     });
 
 
