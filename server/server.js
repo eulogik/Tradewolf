@@ -48,7 +48,7 @@ app.start = function() {
                             q = q[0];
                             q.qid = q.id;
                             delete q.id;
-                            //console.log(q);
+                            console.log(q);
                             //console.log(Math.abs(new Date().getTime() - new Date(q.lt_dts).getTime())/3600000, q.t);
                             if(Math.abs(new Date().getTime() - new Date(q.lt_dts).getTime())/3600000 < 10){
                             // temporary fix for avoiding dead data after market is closed
