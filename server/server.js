@@ -5,8 +5,8 @@ var request = require('request');
 var app = module.exports = loopback();
 
 //custom vars
-var on = false;
-var time_interval_in_miliseconds = 1000;
+var on = true;
+var time_interval_in_miliseconds = 5000;
 var apiUri = "http://finance.google.com/finance/info?client=ig&q=";
 
 
