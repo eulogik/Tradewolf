@@ -21,11 +21,6 @@ app.start = function() {
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
 
       //custom code here
-      app.models.Symbols.find({},function(err,symbols){
-        if(err)
-        console.log(err);
-
-        //success
 
         //timer here
         var task_is_running = false;
@@ -35,6 +30,13 @@ app.start = function() {
 
                 //swich on / off
                 if(on && (new Date().getHours()>=0 && new Date().getHours()<=6)){
+
+                app.models.Symbols.find({},function(err,symbols){
+                  if(err)
+                  console.log(err);
+
+                  //success
+
                 console.log("it's on");
                 for(i in symbols){
                   console.log(symbols[i].market+":"+symbols[i].name);
@@ -75,10 +77,11 @@ app.start = function() {
                 }
                 }
                 task_is_running = false;
+              });//
+
             }
         }, time_interval_in_miliseconds);
 
-      });
 
 
       //custom code ends here
