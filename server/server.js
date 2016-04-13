@@ -35,7 +35,7 @@ app.start = function() {
 
                 //swich on / off
                 if(on && (new Date().getHours()>=0 && new Date().getHours()<=6)){
-
+                console.log("it's on");
                 for(i in symbols){
                   //console.log(symbols[i].market+":"+symbols[i].name);
 
