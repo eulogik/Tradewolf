@@ -34,7 +34,7 @@ app.start = function() {
                 task_is_running = true;
 
                 //swich on / off
-                if(on){
+                if(on && (new Date().getHours() >= 0 && new Date().getHours() =< 6)){
 
                 for(i in symbols){
                   //console.log(symbols[i].market+":"+symbols[i].name);
