@@ -30,6 +30,7 @@ app.start = function() {
 
                 //swich on / off
                 if(on && (new Date().getHours()>=0 && new Date().getHours()<=6)){
+                console.log("it's on");
 
                 app.models.Symbols.find({},function(err,symbols){
                   if(err)
@@ -37,7 +38,8 @@ app.start = function() {
 
                   //success
 
-                console.log("it's on");
+
+
                 for(i in symbols){
                   console.log(symbols[i].market+":"+symbols[i].name);
 
@@ -75,10 +77,9 @@ app.start = function() {
 
 
                 }
+              });//
                 }
                 task_is_running = false;
-              });//
-
             }
         }, time_interval_in_miliseconds);
 
